@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+<header class="page-header">
+    <h1> Cadastro de novo usuario, {{ current_user.Nome }} </h1>
+</header>
+
+<main>
+    <div class="form-group">
+        <form method="post" action="/userRegistration">
+            <fieldset>
+                <label for="Nome">Nome:</label>
+                <input id="Nome" type="text" name="Nome" class="form-control">
+
+                <label for="Sobrenome">Sobrenome:</label>
+                <input id="Sobrenome" type="text" name="Sobrenome" class="form-control">
+
+                <label for="Email">Email:</label>
+                <input id = "Email" type="email" name="Email" class="form-control">
+
+                <label for="AreaAtuacao">Area Atuação:</label>
+                <input id = "AreaAtuacao" type="text" name="AreaAtuacao" class="form-control">
+
+                <label for="Supervisor">Supervisor direto:</label>
+                <input id="Supervisor" type="text" name="Supervisor" class="form-control">
+
+                <label for="Cargo">Cargo:</label>
+                <input id="Cargo" type="text" name="Cargo" class="form-control">
+
+                
+
+                <div class="dropdown" style="margin-bottom: 60px; margin-top: 30px;">
+                    <p>
+                        <label for="NivelAcesso">Nivel de acesso do usuário:</label>
+                    </p>
+                        <select name="NivelAcesso" class = "btn btn-primary dropdown-toggle ">
+                            <option value=0>Admin</option>
+                            <option value=1>Usuario</option>
+                        </select>
+                </div>
+                
+
+
+
+                <label for="Senha">Senha:</label>
+                <input id="Senha" type="password" name="Senha" class="form-control">
+
+                <input type="submit" value="Cadastrar" class="btn btn-primary btn-salvar">
+            </fieldset>
+        </form>
+    </div>
+</main>
+
+
+
+{% endblock %}

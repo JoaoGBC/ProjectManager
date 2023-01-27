@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+    {% block conteudo %}
+
+    <main>
+        <div class="form-group">
+            <form method="post" action="{{ url_for('projectUpdate', ProjectId = project.Id)}}">
+                <fieldset>
+                    <label for="NomeProjeto">Nome Do Projeto:</label>
+                    <input type="text" id='NomeProjeto' name="NomeProjeto" class="form-control" value="{{ project.NomeProjeto }}" required>
+
+                    <label for="Descricao">Descrição:</label>
+                    <textarea name="Descricao" rows="6" cols="70" class="form-control" id = "Descricao" required>{{ project.Descricao }}</textarea>
+
+                    <div class="dropdown" style="margin-bottom: 60px; margin-top: 30px;">
+                        <p>
+                            <label for="Prioridade" value="None">Prioridade: </label>
+                        </p>
+                            <select name="Prioridade" class = "btn btn-primary dropdown-toggle " required>
+                                <option value=""> Escolha uma opção </option>
+                                <option value="Urgente">Já estamos atrasados</option>
+                                <option value="backlog">quando der faz</option>
+                            </select>
+                    </div>
+                    <input type="hidden" name = "Dono" value = "{{project.Dono}}">
+
+                    <input type="submit" value="Atualizar" class="btn btn-primary btn-salvar">
+
+                    
+                </fieldset>
+
+                <a href="{{ url_for('delete', ProjectId = project.Id)}}">Delete</a>
+            </form>
+        </div>
+    </main>
+
+    {% endblock %}

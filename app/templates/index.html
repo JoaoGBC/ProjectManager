@@ -1,0 +1,27 @@
+<!-- TODO: estilizar -->
+
+{% extends "template.html" %}
+{% block conteudo %}
+
+
+        
+
+        <header class="page-header">
+            <h1> Home page Gerenciador de projetos</h1>
+        </header>
+        
+        <main>
+            <div class="form-group">
+                <form method="post" action="/login">
+                    <fieldset>
+                        <label for="Email">Email:</label>
+                        <input type="text" name="Email" id="Email" class="form-control">
+                        <label for="Senha">Senha:</label>
+                        <input type="password" name="Senha" id="Senha" class="form-control">
+                        <input type="submit" value="Entrar" class="btn btn-primary btn-salvar">
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+        
+{% endblock %}

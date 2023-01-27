@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+    {% block conteudo %}
+
+        <main>
+            <div class="form-group">
+                <form method="post" action="/createNewProject">
+                    <fieldset>
+                        <label for="NomeProjeto">Nome Do Projeto:</label>
+                        <input type="text" id="NomeProjeto" name="NomeProjeto" class="form-control" placeholder="Nome do projeto">
+
+                        <label for="Descricao">Descrição:</label>
+                        <textarea id="Descrição" name="Descricao" rows="6" cols="70" class="form-control" placeholder="Apresente uma descrição completa do projeto"></textarea>
+
+                        <input type="submit" value="Cadastrar" class="btn btn-primary btn-salvar">
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+
+    {% endblock %}
